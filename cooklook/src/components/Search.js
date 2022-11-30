@@ -3,6 +3,8 @@ import searchIcon from '../images/search-icon.png'
 
 export default function Search(props) {
 
+    const setRecipes = props.setRecipes // This is a function
+
     const [search, setSearch] = useState('')
     const [seachQuery, setSearchQuery] = useState('')
 
@@ -26,11 +28,11 @@ export default function Search(props) {
         if (seachQuery) {
             fetch('https://api.edamam.com/api/recipes/v2'+endpoint)
                 .then(res => res.json())
-                .then(data => props.setRecipes(data.hits))
+                .then(data => setRecipes(data.hits))
         } else {
-            props.setRecipes([])
+            setRecipes([])
         }
-    }, [seachQuery, props.setRecipes])
+    }, [seachQuery, setRecipes])
 
     return (
         <div className='search'>
