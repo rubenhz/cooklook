@@ -7,8 +7,16 @@ export default function Header() {
         <div className='header'>
             <p className='header--logo'>CookLook</p>
             <div className='header--icons'>
-                <img className='header--heart-icon' src={heartIcon} />
-                <img className='header--menu-icon' src={menuIcon} />
+                <img 
+                    className='header--heart-icon' 
+                    src={heartIcon}
+                    alt='heart icon'
+                />
+                <img 
+                    className='header--menu-icon' 
+                    src={menuIcon}
+                    alt='hamburger menu icon'
+                />
             </div>
         </div>
     )

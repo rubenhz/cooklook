@@ -30,7 +30,7 @@ export default function Search(props) {
         } else {
             props.setRecipes([])
         }
-    }, [seachQuery])
+    }, [seachQuery, props.setRecipes])
 
     return (
         <div className='search'>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import heartIcon from '../images/heart-icon.png'
 import filledHeartIcon from '../images/filled-heart-icon.png'
 
@@ -22,11 +22,11 @@ export default function Recipe(props) {
                 >
                 {
                     liked ? 
-                        <img src={filledHeartIcon} />
-                        : <img src={heartIcon} />
+                        <img src={filledHeartIcon} alt='filled heart icon'/>
+                        : <img src={heartIcon} alt='heart icon outline'/>
                 }
             </div>
-            <img className='recipe--image' src={props.images.SMALL.url} />
+            <img className='recipe--image' src={props.images.SMALL.url} alt='recipe thumbnail'/>
             <div className='recipe-info'>
                 <h2 className='recipe--label'>{props.label}</h2>
                 <a 
@@ -36,6 +36,7 @@ export default function Recipe(props) {
                     <img 
                         className='recipe--favicon'
                         src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${props.url}`}
+                        alt='recipe source website favicon'
                     />
                     {props.url.slice(0, 30)+'...'}
                 </a>
