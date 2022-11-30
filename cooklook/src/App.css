@@ -1,0 +1,156 @@
+:root {
+  --orange: #D09248;
+  --lightgrey: #F3F2EE;
+  --black: #332A19;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--black);
+}
+
+main {
+  padding: 0 18px;
+}
+
+.App {
+  height: 100vh;
+}
+
+.app--results {
+  font-size: 13px;
+  color: #B8B8B8;
+  text-decoration: underline;
+  margin-top: -14px;
+}
+
+.header {
+  background-color: var(--lightgrey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  box-shadow: 0px 0px 10px var(--lightgrey);
+}
+
+.header--logo {
+  margin: 0;
+  font-family: 'Courgette', cursive;
+  font-size: 2em;
+  color: var(--orange);
+}
+
+.header--icons {
+  display: flex;
+  gap: 10px;
+}
+
+.recipe, .recipe--image, .recipe--tag {
+  border-radius: 7px;
+}
+
+.recipe {
+  background-color: var(--lightgrey);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.recipe--image {
+  width: 120px;
+  height: 120px;
+}
+
+.recipe--label {
+  margin: 0;
+  line-height: 1;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.recipe--tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recipe--tag {
+  background-color: #b3906258;
+  padding: 3px;
+  font-size: 11px;
+}
+
+.recipe--url {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 1em 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #9B6424;
+}
+
+.recipe--favicon {
+  margin-right: 0.7em;
+}
+
+.recipe--heart {
+  background-color: var(--lightgrey);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px 0 7px 0;
+  width: 25px; height: 25px;
+  cursor: pointer;
+}
+
+.recipe--heart > img {
+  width: 17px;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  max-width: 510px;
+  margin: 43px auto;
+}
+
+.search--prompt {
+  margin: 0 0 2px 13px;
+  font-size: 10px;
+}
+
+.search--input {
+  border-radius: 36px;
+  padding: 10px 40px 10px 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  border: none;
+  background-color: #deb17c;
+}
+
+.search--button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 33px;
+  height: 33px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search--magnifying-glass-icon {
+  display: block;
+  width: 100%;
+}
