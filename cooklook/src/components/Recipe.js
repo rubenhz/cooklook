@@ -26,8 +26,10 @@ export default function Recipe(props) {
                         : <img src={heartIcon} alt='heart icon outline'/>
                 }
             </div>
-            <img className='recipe--image' src={props.images.SMALL.url} alt='recipe thumbnail'/>
-            <div className='recipe-info'>
+            <div className='recipe--image-container'>
+                <img className='recipe--image' src={props.images.SMALL.url} alt='recipe thumbnail'/>
+            </div>
+            <div className='recipe--info'>
                 <h2 className='recipe--label'>{props.label}</h2>
                 <a 
                     className='recipe--url' 
@@ -38,7 +40,7 @@ export default function Recipe(props) {
                         src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${props.url}`}
                         alt='recipe source website favicon'
                     />
-                    {props.url.slice(0, 30)+'...'}
+                    {props.url.split('/')[2]}
                 </a>
                 <div className='recipe--tags'>
                     {tags.slice(0, 3)}

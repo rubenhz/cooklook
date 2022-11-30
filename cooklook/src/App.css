@@ -1,7 +1,7 @@
 :root {
   --orange: #D09248;
   --lightgrey: #F3F2EE;
-  --black: #332A19;
+  --black: #4d3f24;
 }
 
 * {
@@ -58,14 +58,29 @@ main {
   background-color: var(--lightgrey);
   margin-bottom: 10px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 16px;
   position: relative;
+  overflow: hidden;
 }
 
 .recipe--image {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 500px){
+  .recipe--image {
+    width: 100px;
+  }
+}
+
+.recipe--info {
+  padding: 10px 5px 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .recipe--label {
@@ -75,10 +90,16 @@ main {
   font-weight: 500;
 }
 
+@media screen and (max-width: 500px){
+  .recipe--label {
+    font-size: 17px;
+  }
+}
+
 .recipe--tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
 .recipe--tag {
@@ -94,6 +115,12 @@ main {
   font-size: 13px;
   font-weight: bold;
   color: #9B6424;
+}
+
+@media screen and (max-width: 500px){
+  .recipe--url, .recipe--tag {
+    font-size: 11px;
+  }
 }
 
 .recipe--favicon {
