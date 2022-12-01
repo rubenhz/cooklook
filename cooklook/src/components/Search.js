@@ -44,7 +44,7 @@ export default function Search(props) {
         } else {
             setRecipes([])
         }
-    }, [seachQuery])
+    }, [seachQuery, setRecipes])
 
     return (
         <div className='search'>
