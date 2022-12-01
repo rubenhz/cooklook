@@ -1,6 +1,6 @@
 :root {
   --orange: #D09248;
-  --lightgrey: #F3F2EE;
+  --lightgrey: #f3f0ee;
   --black: #4d3f24;
 }
 
@@ -12,6 +12,7 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: var(--black);
+  background-color: #fffbf6;
 }
 
 main {
@@ -20,6 +21,13 @@ main {
 
 .App {
   height: 100vh;
+}
+
+@media screen and (min-width: 700px){
+  .App {
+    width: 75%;
+    margin: auto;
+  }
 }
 
 .app--results {
@@ -36,6 +44,7 @@ main {
   align-items: center;
   padding: 18px;
   box-shadow: 0px 0px 10px var(--lightgrey);
+  position: relative;
 }
 
 .header--logo {
@@ -50,6 +59,43 @@ main {
   gap: 10px;
 }
 
+.header--heart-icon-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.header--saved-recipes-counter {
+  position: absolute;
+  right: -3px;
+  top: -1px;
+  background-color: orangered;
+  min-width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  color: var(--lightgrey);
+}
+
+.liked-recipes {
+  backdrop-filter: blur(5px);
+  background-color: #d093488a;
+  box-shadow: 0px 0px 11px var(--black);
+  position: absolute;
+  top: 75px;
+  right: 0;
+  z-index: 1;
+  padding: 16px;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  overflow-y: scroll;
+  border-radius: 13px;
+}
+
 .recipe, .recipe--image, .recipe--tag {
   border-radius: 7px;
 }
@@ -59,7 +105,6 @@ main {
   margin-bottom: 10px;
   display: flex;
   align-items: stretch;
-  gap: 16px;
   position: relative;
   overflow: hidden;
 }
@@ -77,7 +122,7 @@ main {
 }
 
 .recipe--info {
-  padding: 10px 5px 10px 0;
+  padding: 16px 10px 16px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,7 +131,7 @@ main {
 .recipe--label {
   margin: 0;
   line-height: 1;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 500;
 }
 

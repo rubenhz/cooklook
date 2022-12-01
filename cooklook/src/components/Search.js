@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import searchIcon from '../images/search-icon.png'
+import {getLikedRecipesFromLocalStorage} from '../utils'
 
 export default function Search(props) {
 
@@ -26,13 +27,24 @@ export default function Search(props) {
         const app_key = '83d924f89865c5661533a14d2953d6d6'
         const endpoint = `?type=public&q=${seachQuery}&app_id=${app_id}&app_key=${app_key}&random=true`
         if (seachQuery) {
-            fetch('https://api.edamam.com/api/recipes/v2'+endpoint)
+            fetch('https://api.edamam.com/api/recipes/v2' + endpoint)
                 .then(res => res.json())
-                .then(data => setRecipes(data.hits))
+                .then(data => {
+                    const recipes = data.hits.map(recipe => {
+                        const localStorageUris = getLikedRecipesFromLocalStorage().map(r => r.uri)
+                        if (localStorageUris.includes(recipe.recipe.uri)) {
+                            return {...recipe.recipe, isLiked: true}
+                        } else {
+                            return {...recipe.recipe, isLiked: false}
+                        }
+                        
+                    })
+                    setRecipes(recipes)
+                })
         } else {
             setRecipes([])
         }
-    }, [seachQuery, setRecipes])
+    }, [seachQuery])
 
     return (
         <div className='search'>
