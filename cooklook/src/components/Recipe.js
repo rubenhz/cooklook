@@ -5,7 +5,7 @@ import { updateLikedRecipesInLS } from '../utils'
 
 export default function Recipe(props) {
 
-    const tags = props.healthLabels.map(tag => {
+    const tags = props.dietLabels.map(tag => {
         return (
             <div 
                 key={tag} 
