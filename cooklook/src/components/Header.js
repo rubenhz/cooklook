@@ -18,6 +18,7 @@ export default function Header({recipes, setRecipes}) {
 
     return (
         <div className='header'>
+            <div className='header--content'>
             <p className='header--logo'>CookLook</p>
             <div className='header--icons'>
                 <div 
@@ -44,7 +45,7 @@ export default function Header({recipes, setRecipes}) {
             
             {showSavedRecipes &&
             <LikedRecipes recipes={recipes} setRecipes={setRecipes} savedRecipes={savedRecipes} />}
-            
+            </div>
         </div>
     )
 }

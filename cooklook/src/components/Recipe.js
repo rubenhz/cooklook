@@ -48,11 +48,10 @@ export default function Recipe(props) {
                     className='recipe--image' 
                     src={props.images.SMALL.url} 
                     alt='recipe thumbnail'
-                    style={props.compact && {width: '80px'}}
+                    style={props.compact && {width: '100px'}}
                 />
             </div>
             <div className='recipe--info'>
-                <h2 style={props.compact && {fontSize: '17px'}} className='recipe--label'>{props.label}</h2>
                 <a 
                     className='recipe--url' 
                     href={props.url}
@@ -63,11 +62,18 @@ export default function Recipe(props) {
                         src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${props.url}`}
                         alt='recipe source website favicon'
                     />
-                    {props.url.split('/')[2]}
+                    {props.url.split('/')[2].replace('www.', '')}
                 </a>
+                <h2 style={props.compact && {fontSize: '17px'}} className='recipe--label'>{props.label}</h2>
                 <div className='recipe--tags'>
                     {tags.slice(0, 3)}
                 </div>
+                {
+                    !props.compact &&
+                    <button className='recipe--more-info-btn'>
+                        More Info
+                    </button>
+                }
             </div>
         </div>
     )

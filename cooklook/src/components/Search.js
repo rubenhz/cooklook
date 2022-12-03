@@ -7,14 +7,13 @@ export default function Search(props) {
     const setRecipes = props.setRecipes // This is a function
 
     const [search, setSearch] = useState('')
-    const [seachQuery, setSearchQuery] = useState('')
 
     function handleChange(e) {
         setSearch(e.target.value)
     }
 
     function handleClick() {
-        setSearchQuery(search)
+        props.setSearchQuery(search)
     }
 
     function handleKeyPressed(e) {
@@ -25,8 +24,8 @@ export default function Search(props) {
         // app_id and app_key DO NOT INCLUDE IN DEPLOYED BUILD!!! ***
         const app_id = 'da33b67e'
         const app_key = '83d924f89865c5661533a14d2953d6d6'
-        const endpoint = `?type=public&q=${seachQuery}&app_id=${app_id}&app_key=${app_key}&random=true`
-        if (seachQuery) {
+        const endpoint = `?type=public&q=${props.searchQuery}&app_id=${app_id}&app_key=${app_key}&random=true`
+        if (props.searchQuery) {
             fetch('https://api.edamam.com/api/recipes/v2' + endpoint)
                 .then(res => res.json())
                 .then(data => {
@@ -44,7 +43,7 @@ export default function Search(props) {
         } else {
             setRecipes([])
         }
-    }, [seachQuery, setRecipes])
+    }, [props.searchQuery, setRecipes])
 
     return (
         <div className='search'>

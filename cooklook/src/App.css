@@ -12,22 +12,39 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: var(--black);
-  background-color: #fffbf6;
+  background-color: white;
 }
 
 main {
-  padding: 0 18px;
+  margin: auto;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    padding: 18px 18px;
+  }
 }
 
 .App {
   height: 100vh;
 }
 
-@media screen and (min-width: 700px){
-  .App {
-    width: 75%;
-    margin: auto;
+.app--intro {
+  max-width: 704px;
+  margin: auto;
+  text-align: center;
+  font-size: 56px;
+  margin-top: 0.5em;
+}
+
+@media screen and (max-width: 600px){
+  .app--intro {
+    font-size: 35px;
+    margin-top: 1em;
+    margin-bottom: -20px;
   }
+  
 }
 
 .app--results {
@@ -35,16 +52,50 @@ main {
   color: #B8B8B8;
   text-decoration: underline;
   margin-top: -14px;
+  margin-left: 5px;
+}
+
+.app--burger-gif {
+  width: 300px;
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.app--nothing-found {
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  margin: 0;
+}
+
+.app--start-searching {
+  display: block;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 70px;
 }
 
 .header {
   background-color: var(--lightgrey);
+  
+}
+
+.header--content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px;
+  padding: 18px 0;
   box-shadow: 0px 0px 10px var(--lightgrey);
   position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .header--content {
+    padding: 18px 18px;
+  }
 }
 
 .header--logo {
@@ -96,17 +147,24 @@ main {
   border-radius: 13px;
 }
 
-.recipe, .recipe--image, .recipe--tag {
+.recipe--image, .recipe--tag {
   border-radius: 7px;
 }
 
 .recipe {
-  background-color: var(--lightgrey);
+  background-color: #FFFFFF;
+  border-radius: 24px;
   margin-bottom: 10px;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   position: relative;
   overflow: hidden;
+  padding: 20px 28px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px #0000001a, 0 0 4px #0000001a;
+  gap: 12px;
+  max-width: 800px; /* MAX WIDTH AND MIN IS 520PX */
 }
 
 .recipe--image {
@@ -122,17 +180,17 @@ main {
 }
 
 .recipe--info {
-  padding: 16px 10px 16px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .recipe--label {
   margin: 0;
-  line-height: 1;
-  font-size: 22px;
-  font-weight: 500;
+  line-height: 25px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 500px){
@@ -144,22 +202,53 @@ main {
 .recipe--tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .recipe--tag {
   background-color: #b3906258;
-  padding: 3px;
+  padding: 3px 6px;
   font-size: 11px;
+}
+
+/* .recipe--more-info-btn {
+  width: 144px; height: 36px;
+  border-radius: 20px;
+  background-color: #1AB76C;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+} */
+
+.recipe--more-info-btn {
+  width: 144px; height: 36px;
+  border-radius: 20px;
+  background-color: white;
+  border:1px solid #d09348d2;
+  color: #777777d3;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.recipe--more-info-btn:hover {
+  background-color: var(--orange);
+  color: white;
+  cursor: pointer;
 }
 
 .recipe--url {
   display: flex;
   align-items: center;
-  margin: 5px 0 1em 0;
-  font-size: 13px;
-  font-weight: bold;
-  color: #9B6424;
+  margin: 0 0 2px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #777777;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 500px){
@@ -169,18 +258,19 @@ main {
 }
 
 .recipe--favicon {
-  margin-right: 0.7em;
+  margin-right: 0.4em;
 }
 
 .recipe--heart {
-  background-color: var(--lightgrey);
+  background-color: #b3906258 /* #1AB76C */;
   position: absolute;
   top: 0;
+  left: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 6px 0 7px 0;
-  width: 25px; height: 25px;
+  border-radius: 0 0 20px 20px;
+  width: 28px; height: 40px;
   cursor: pointer;
 }
 
