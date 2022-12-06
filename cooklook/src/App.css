@@ -27,7 +27,7 @@ main {
 }
 
 .App {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .app--intro {
@@ -383,6 +383,7 @@ main {
 .search--prompt {
   margin: 0 0 2px 13px;
   font-size: 10px;
+  opacity: 50%;
 }
 
 .search--input {
@@ -408,4 +409,21 @@ main {
 .search--magnifying-glass-icon {
   display: block;
   width: 100%;
+}
+
+.footer {
+  border-top: 1.5px solid #e9e9e9;
+  color: var(--black);
+  opacity: 65%;
+  padding: 16px;
+  text-align: center;
+  font-size: smaller;
+}
+
+.footer > p {
+  margin: 0;
+}
+
+.footer > p:nth-last-child(1) {
+  margin-top: 5px;
 }

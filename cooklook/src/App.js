@@ -42,20 +42,26 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header recipes={recipes} setRecipes={setRecipes}/>
-      <h1 className='app--intro'>
-        Over 2.3 million recipes to discover
-      </h1>
-      <main>
-        <Search 
-          searchQuery={searchQuery} 
-          setSearchQuery={setSearchQuery} 
-          setRecipes={setRecipes} 
-        />
-        {renderMain()}
-      </main>
-    </div>
+    <>
+      <div className="App">
+        <Header recipes={recipes} setRecipes={setRecipes}/>
+        <h1 className='app--intro'>
+          Over 2.3 million recipes to discover
+        </h1>
+        <main>
+          <Search 
+            searchQuery={searchQuery} 
+            setSearchQuery={setSearchQuery} 
+            setRecipes={setRecipes} 
+          />
+          {renderMain()}
+        </main>
+      </div>
+      <div className='footer'>
+        <p>Built by Ruben Henriquez</p>
+        <p>jhdl.ruben@gmail.com</p>
+      </div>
+    </>
   );
 }
 
