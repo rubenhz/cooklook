@@ -71,7 +71,6 @@ function Loading() {
 
   useEffect(() => {
     const id = setTimeout(() => setAfterTimeOut(true), 3000)
-    console.log('loading mounted')
     return () => clearTimeout(id)
   }, [])
 

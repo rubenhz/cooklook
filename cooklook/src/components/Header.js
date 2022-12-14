@@ -10,11 +10,15 @@ export default function Header({recipes, setRecipes}) {
     const [showSavedRecipes, setShowSavedRecipes] = useState(false)
     const [savedRecipes, setSavedRecipes] = useState(getLikedRecipesFromLocalStorage())
 
-    const likedRecipesFromLocalStorage = getLikedRecipesFromLocalStorage()
-
     useEffect(() => {
-        setSavedRecipes(getLikedRecipesFromLocalStorage())
-    }, [likedRecipesFromLocalStorage])
+        function handleStorageChange() {
+            setSavedRecipes(getLikedRecipesFromLocalStorage())
+        }
+        window.addEventListener('storage', handleStorageChange)
+        return () => window.removeEventListener('storage', handleStorageChange)
+    }, [])
+
+    
 
     return (
         <div className='header'>

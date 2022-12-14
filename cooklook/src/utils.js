@@ -23,4 +23,5 @@ export function updateLikedRecipesInLS(recipes) {
     })
 
     localStorage.setItem(SAVEDRECIPES, JSON.stringify(localStorageRecipes.filter(r => r.isLiked)))
+    window.dispatchEvent(new Event('storage'))
 }
